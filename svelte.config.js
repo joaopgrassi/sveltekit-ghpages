@@ -13,7 +13,8 @@ const config = {
 			pages: 'public',  // path to public directory
 			assets: 'public',  // path to public directory
 			fallback: null
-		})
+		}),
+		appDir: 'app_',
 	}
 };
 

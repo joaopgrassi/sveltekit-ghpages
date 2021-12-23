@@ -1,7 +1,7 @@
 import { publish } from 'gh-pages';
 
 publish(
-    'build',
+    'public',
     {
         dotfiles: true
     },
