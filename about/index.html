@@ -9,11 +9,40 @@
 
 		
 
+		<link rel="modulepreload" href="/app_/start-2058d7d6.js">
+		<link rel="modulepreload" href="/app_/chunks/vendor-cd404de0.js">
+		<link rel="modulepreload" href="/app_/pages/__layout.svelte-7e74ac2f.js">
+		<link rel="modulepreload" href="/app_/pages/about.svelte-cf95cba8.js">
 		<link rel="stylesheet" href="/app_/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/app_/assets/pages/__layout.svelte-0673515a.css">
 		<link rel="stylesheet" href="/app_/assets/pages/about.svelte-bf4528fa.css">
 
-		
+		<script type="module">
+			import { start } from "/app_/start-2058d7d6.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/app_/pages/__layout.svelte-7e74ac2f.js"),
+						import("/app_/pages/about.svelte-cf95cba8.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002Fabout",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<div id="svelte">
@@ -32,23 +61,17 @@
 
 <main class="svelte-1izrdc8">
 
-<div class="content svelte-cf77e8"><h1>About this app</h1>
+<div class="content svelte-cf77e8"><h1>These are the languages</h1>
 
-	<p>This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	
-	<pre>npm init svelte@next</pre>
-
-	<p>The page you&#39;re looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don&#39;t need to load any JavaScript. Try viewing the page&#39;s source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>The <a href="/todos">TODOs</a> page illustrates SvelteKit&#39;s data loading and form handling. Try using
-		it with JavaScript disabled!
-	</p>
+	<h3>0 - csharp</h3>
+		<ul><li>trace</li>
+				<ul><li>console</li>
+				</ul>
+		</ul><h3>1 - go</h3>
+		<ul><li>trace</li>
+				<ul><li>console</li>
+				</ul>
+		</ul>
 </div></main>
 
 <footer class="svelte-1izrdc8"><p>visit <a href="https://kit.svelte.dev" class="svelte-1izrdc8">kit.svelte.dev</a> to learn SvelteKit</p>
