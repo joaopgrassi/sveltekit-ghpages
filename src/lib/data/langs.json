@@ -7,7 +7,7 @@
         "apps": [
           {
             "type": "console",
-            "recipeFile": "App.cs",
+            "source": "https://raw.githubusercontent.com/joaopgrassi/httpclient-token-identityserver/main/src/Clients/ProtectedApi/Controllers/ProtectedController.cs",
             "dependencies": [
               {
                 "id": "OpenTelemetry",
@@ -31,7 +31,7 @@
         "apps": [
           {
             "type": "console",
-            "recipeFile": "app.go",
+            "source": "https://raw.githubusercontent.com/open-telemetry/opentelemetry-go/main/example/otel-collector/main.go",
             "dependencies": [
               {
                 "id": "go.opentelemetry.io/otel/sdk",
