@@ -27,7 +27,7 @@
     "lang": "go",
     "signals": [
       {
-        "type": "trace",
+        "type": "metrics",
         "apps": [
           {
             "type": "console",

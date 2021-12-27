@@ -5,17 +5,28 @@
 </script>
 
 <script lang="ts">
-	import { langStore } from '$lib/store';
-	const { languages } = langStore;
-	let langs: any;
+	import {
+		store,
+		selectedLanguage,
+		languages,
+		filteredSignals,
+		selectedSignal,
+		selectedSample,
+		filteredSamples
+	} from '$lib/store';
+	import { slide } from 'svelte/transition';
+	const { allLanguages } = store;
 	let rawCode: string = 'much empty, such sad.';
 
-	languages.subscribe((value) => {
-		langs = value;
+	selectedSample.subscribe((sample) => {
+		getRawCode(sample);
 	});
 
-	async function getRawCode(url: string) {
-		const res = await fetch(url);
+	async function getRawCode(sample) {
+		if (!sample) {
+			return;
+		}
+		const res = await fetch(sample.source);
 		rawCode = await res.text();
 	}
 </script>
@@ -27,7 +38,7 @@
 <div class="content">
 	<h1>These are the languages</h1>
 
-	{#each langs as l, index}
+	{#each $allLanguages as l, index}
 		<h3>{index} - {l.lang}</h3>
 		<ul>
 			{#each l.signals as s}
@@ -36,7 +47,7 @@
 					{#each s.apps as app}
 						<li>
 							{app.type}
-							<button on:click={() => getRawCode(app.source)}>Get Code</button>
+							<!-- <button on:click={() => getRawCode()}>Get Code</button> -->
 						</li>
 					{/each}
 				</ul>
@@ -45,7 +56,40 @@
 	{/each}
 </div>
 
-<pre>
+<div>
+	<label for="lang">Language</label>
+	<select name="lang" bind:value={$selectedLanguage}>
+		{#each $languages as lang}
+			<option value={lang}>
+				{lang}
+			</option>
+		{/each}
+	</select>
+</div>
+
+<div>
+	<label for="signal">Signal</label>
+	<select name="signal" bind:value={$selectedSignal}>
+		{#each $filteredSignals as signal}
+			<option value={signal}>
+				{signal}
+			</option>
+		{/each}
+	</select>
+</div>
+
+<div>
+	<label for="sample">Sample</label>
+	<select name="sample" bind:value={$selectedSample}>
+		{#each $filteredSamples as sample}
+			<option value={sample}>
+				{sample.type}
+			</option>
+		{/each}
+	</select>
+</div>
+
+<pre transition:slide|local>
   <code>
     {rawCode}
   </code>
