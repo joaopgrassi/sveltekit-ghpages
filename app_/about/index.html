@@ -9,16 +9,16 @@
 
 		
 
-		<link rel="modulepreload" href="/app_/start-109f2ee7.js">
-		<link rel="modulepreload" href="/app_/chunks/vendor-cd404de0.js">
-		<link rel="modulepreload" href="/app_/pages/__layout.svelte-7e74ac2f.js">
-		<link rel="modulepreload" href="/app_/pages/about.svelte-5270c066.js">
+		<link rel="modulepreload" href="/app_/start-55a0226a.js">
+		<link rel="modulepreload" href="/app_/chunks/vendor-fbc85d10.js">
+		<link rel="modulepreload" href="/app_/pages/__layout.svelte-28caf361.js">
+		<link rel="modulepreload" href="/app_/pages/about.svelte-2f77b52b.js">
 		<link rel="stylesheet" href="/app_/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/app_/assets/pages/__layout.svelte-0673515a.css">
 		<link rel="stylesheet" href="/app_/assets/pages/about.svelte-bf4528fa.css">
 
 		<script type="module">
-			import { start } from "/app_/start-109f2ee7.js";
+			import { start } from "/app_/start-55a0226a.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":""},
@@ -31,8 +31,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/app_/pages/__layout.svelte-7e74ac2f.js"),
-						import("/app_/pages/about.svelte-5270c066.js")
+						import("/app_/pages/__layout.svelte-28caf361.js"),
+						import("/app_/pages/about.svelte-2f77b52b.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -66,16 +66,27 @@
 	<h3>0 - csharp</h3>
 		<ul><li>trace</li>
 				<ul><li>console
-							<button>Get Code</button>
+							
 						</li>
 				</ul>
 		</ul><h3>1 - go</h3>
-		<ul><li>trace</li>
+		<ul><li>metrics</li>
 				<ul><li>console
-							<button>Get Code</button>
+							
 						</li>
 				</ul>
 		</ul></div>
+
+<div><label for="lang">Language</label>
+	<select name="lang"><option value="csharp">csharp
+			</option><option value="go">go
+			</option></select></div>
+
+<div><label for="signal">Signal</label>
+	<select name="signal"></select></div>
+
+<div><label for="sample">Sample</label>
+	<select name="sample"></select></div>
 
 <pre><code>much empty, such sad.</code>
 </pre></main>
