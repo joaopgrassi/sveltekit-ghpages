@@ -16,7 +16,7 @@
 	} from '$lib/store';
 	import { slide } from 'svelte/transition';
 	const { allLanguages } = store;
-	let rawCode: string = 'much empty, such sad.';
+	let rawCode: string = 'much empty, such sad :(';
 
 	selectedSample.subscribe((sample) => {
 		getRawCode(sample);
@@ -94,6 +94,7 @@
     {rawCode}
   </code>
 </pre>
+
 
 <style>
 	.content {

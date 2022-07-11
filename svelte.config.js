@@ -8,7 +8,6 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		target: '#svelte',
 		adapter: adapter({
 			pages: 'public',  // path to public directory
 			assets: 'public',  // path to public directory
