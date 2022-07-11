@@ -1,0 +1,4 @@
+import"./index-cc7dbd6b.js";function h(n){const a=n-1;return a*a*a+1}function $(n,{delay:a=0,duration:e=400,easing:i=h}={}){const t=getComputedStyle(n),c=+t.opacity,r=parseFloat(t.height),s=parseFloat(t.paddingTop),d=parseFloat(t.paddingBottom),m=parseFloat(t.marginTop),g=parseFloat(t.marginBottom),l=parseFloat(t.borderTopWidth),p=parseFloat(t.borderBottomWidth);return{delay:a,duration:e,easing:i,css:o=>`overflow: hidden;opacity: ${Math.min(o*20,1)*c};height: ${o*r}px;padding-top: ${o*s}px;padding-bottom: ${o*d}px;margin-top: ${o*m}px;margin-bottom: ${o*g}px;border-top-width: ${o*l}px;border-bottom-width: ${o*p}px;`}}function y(n,{delay:a=0,duration:e=400,easing:i=h,start:t=0,opacity:c=0}={}){const r=getComputedStyle(n),s=+r.opacity,d=r.transform==="none"?"":r.transform,m=1-t,g=s*(1-c);return{delay:a,duration:e,easing:i,css:(l,p)=>`
+			transform: ${d} scale(${1-m*p});
+			opacity: ${s-g*p}
+		`}}export{y as a,h as c,$ as s};
